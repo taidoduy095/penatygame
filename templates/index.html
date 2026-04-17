@@ -1,0 +1,23 @@
+<h1>⚽ Penalty Game</h1>
+<h2>Coin: {{coin}}</h2>
+<p>{{msg}}</p>
+
+{% if not playing %}
+<form method="post">
+<input name="bet" placeholder="Nhập cược">
+<button name="action" value="start">Chơi</button>
+</form>
+{% else %}
+<h3>{{cur}}</h3>
+
+<form method="post">
+<button name="choice" value="trai">Trái</button>
+<button name="choice" value="giua">Giữa</button>
+<button name="choice" value="phai">Phải</button>
+<input type="hidden" name="action" value="play">
+</form>
+
+<form method="post">
+<button name="action" value="stop">Dừng</button>
+</form>
+{% endif %}
